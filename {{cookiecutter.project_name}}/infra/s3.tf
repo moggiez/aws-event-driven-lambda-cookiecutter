@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "_" {
-  bucket = "${var.domain_name}-${var.project_name}"
+  bucket = "${var.domain_name}-${replace(var.project_name, "_", "-")}"
+  acl    = "private"
   acl    = "private"
 
   tags = {
