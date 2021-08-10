@@ -1,6 +1,6 @@
-# aws-lambda-api-cookiecutter
+# aws-event-driven-lambda-cookiecutter
 
-A cookiecutter for generating an API backed up by AWS Lambda and DynamoDB. Cookiecutter generates the javascript code and the terraform infrastructure code.
+A cookiecutter for generating an AWS Lambda which is driven by events of certain type in AWS EventBridge.
 
 # Installing
 
@@ -9,13 +9,13 @@ A cookiecutter for generating an API backed up by AWS Lambda and DynamoDB. Cooki
 # Cutting a new API project
 
 ```bash
-cookiecutter git@github.com:moggiez/aws-lambda-api-cookiecutter.git
+cookiecutter git@github.com:moggiez/aws-event-driven-lambda-cookiecutter.git
 ```
 
 # Using S3 Terraform backend for the infrastructure
 
 - Uncomment line 9 in `infra/main.tf`
-- Make sure that the backend storage was created - check whether `moggies-io-<your-api-name>` is present in [backends list](https://github.com/moggiez/terraform-backend/blob/master/main.tf#L14)
+- Make sure that the backend storage was created - check whether `moggies-io-<your-project-name>` is present in [backends list](https://github.com/moggiez/terraform-backend/blob/master/main.tf#L14)
 
 # Commiting to Github
 
