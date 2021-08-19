@@ -1,7 +1,3 @@
-locals {
-  event_type_normalized = replace(var.event_type, " ", "-")
-}
-
 module "{{cookiecutter.project_name}}_source_to_log_group" {
   source        = "git@github.com:moggiez/terraform-modules.git//eventrules_source_to_log_group"
   application   = var.domain_name
@@ -12,12 +8,13 @@ module "{{cookiecutter.project_name}}_source_to_log_group" {
 }
 
 module "event_type_to_lambda" {
+  for_each      = toset(var.event_types)
   source        = "git@github.com:moggiez/terraform-modules.git//eventrules_detail_type_to_lambda"
   application   = var.domain_name
-  name          = "${local.event_type_normalized}-to-${var.project_name}"
+  name          = "${replace(each.value, " ", "-")}-to-${var.project_name}"
   account       = var.account
   region        = var.region
-  detail_types  = [var.event_type]
+  detail_type   = each.value
   eventbus_name = var.eventbus_name
   lambda        = module.event_driven_lambda.lambda
 }

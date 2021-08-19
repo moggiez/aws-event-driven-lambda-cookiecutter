@@ -28,7 +28,7 @@ variable "eventbus_name" {
     default = "{{cookiecutter.eventbus_name}}"
 }
 
-variable "event_type" {
-    type    = string
-    default = "{{cookiecutter.event_type}}"
+variable "event_types" {
+    type    = list(string)
+    default = [{{cookiecutter.event_types}}]
 }

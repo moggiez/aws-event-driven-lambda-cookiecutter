@@ -25,7 +25,7 @@ build-cleanup:
 	rm -rf ./dist/* & mkdir -p dist && rm -rf ./src/node_modules
 
 build: build-cleanup
-	cd src && npm i --only=prod && zip -r ../dist/{{cookiecutter.project_name}}.zip ./
+	cd src && npm i --only=prod && zip -r ../dist/{{cookiecutter.project_name}}-event-driven.zip ./
 
 build-dev: build-cleanup
 	cd src && npm i
