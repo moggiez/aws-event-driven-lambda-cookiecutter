@@ -5,7 +5,7 @@ class Handler {
     }
 
     async handle() {
-        Promise.resolve("Greatt success!");
+        Promise.resolve("Great success!");
     }
 }
 

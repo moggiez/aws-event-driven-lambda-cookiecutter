@@ -29,7 +29,7 @@ SSH_PRIVATE_KEY=<private ssh key authorized to clone from github> # On OSX type 
 GH_PAT_NPM=<pat value> # a github personal access token with the rights to read packages from GH private npm
 ```
 
-- Create a new github repo with name <your-api-name>
+- Create a new github repo with name <your-project-name>
 - Run the commands below before first commit:
 
 ```bash
